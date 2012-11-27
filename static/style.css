@@ -1,0 +1,70 @@
+p {
+	font-family: 'HelveticaNeue', sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+h1 {
+	font-family: 'Chela One', cursive;
+	font-size: 52px;
+	text-align: center;
+	color: #6F83BF;
+	letter-spacing: -1px;
+}
+
+h2 {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 26px;
+	text-align: center;
+	color: #B9A0BB;
+	letter-spacing: -1px;
+	display: inline-block;
+}
+
+form {
+	text-align: center;
+	display: inline-block;
+}
+
+label {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 18px;
+	color: #49BF72;
+}
+
+body {
+	background-color: white;	
+}
+
+
+#name {
+	border: 1px solid #7E543F;
+	padding: 5px;
+	margin: 10px;
+	font-size: 14px;
+	color: #6F83BF;
+}
+
+#submit {
+	background-color: #6F83BF;
+	padding: 5px;
+	color: white;
+	font-size: 14px;
+}
+
+.gallery {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.link {
+      stroke: #ddd;
+      fill: none;
+}
+
+.text {
+	font-family: Helvetica-Neue, Helvetica, sans-serif;
+	font-size: 14px;
+	letter-spacing: 1px;
+	color: #49BF72;
+}

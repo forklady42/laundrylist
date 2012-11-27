@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+        <link rel="stylesheet" type="text/css" href="../static/style.css"/>
+        <link href='http://fonts.googleapis.com/css?family=Chela+One|Yanone+Kaffeesatz|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <body>
+        <h1>laundry list</h1>
+        <center>
+        <h2>Today, I wore </h2>
+        <form id="form" method="POST" action={{category}}>
+            {{ form.csrf_token }}
+            {{ form.items.label }} {{ form.items(size=1) }}
+            <input type="submit" value="Select">
+        </form>
+        </center>
+    </body>
+</html>
