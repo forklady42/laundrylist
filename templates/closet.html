@@ -3,17 +3,10 @@
     <head>
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
         <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-        <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
-        <script>
-            $("form").bind("submit", function() {
-                
-                $("#item").val("");
-                
-                return false;
-            });
-        </script>
+        <script src="../static/ll.js"></script>
         <link rel="stylesheet" type="text/css" href="../static/style.css"/>
         <link href='http://fonts.googleapis.com/css?family=Chela+One|Yanone+Kaffeesatz|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    </head>
     <body>
         <h1>laundry list</h1>
         <center>
@@ -28,6 +21,10 @@
             {{ form.price.label }} {{ form.price(size=20) }} </br>
             <input type="submit" value="Add">
         </form>
+        <br/>
+        <br/>
+        <a href='/closet/view'>View Closet</a>
+        <a href='/'>Home</a>
         </center>
     </body>
 </html>

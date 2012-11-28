@@ -21,6 +21,14 @@ h2 {
 	display: inline-block;
 }
 
+h3 {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 20px;
+	text-align: center;
+	color: #6F83BF;
+	letter-spacing: -1px;
+}
+
 form {
 	text-align: center;
 	display: inline-block;
