@@ -6,7 +6,7 @@ import os
 from bson import json_util
 
 app = Flask(__name__)
-app.secret_key = os.environ.get('LAUNDRY_KEY')
+app.secret_key = 'testing1234' #os.environ.get('LAUNDRY_KEY')
 
 
 @app.route('/')

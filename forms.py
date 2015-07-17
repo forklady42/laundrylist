@@ -1,4 +1,5 @@
-from flask.ext.wtf import Form, TextField, DecimalField, SelectField, validators
+from flask_wtf import Form
+from wtforms import StringField, DecimalField, SelectField, validators
 #MultiDict is the basis of form--allows HTML form elements to pass multiple values for the same key
 from werkzeug.datastructures import MultiDict
 
@@ -20,9 +21,9 @@ clothes_categories =[('',''), ('access', 'accessory'), ('dress', 'dress'), ('out
 class Clothes(Form):
     category = SelectField('Category', [validators.Required(message="Please select a category.")], 
                             choices=clothes_categories)
-    item = TextField('Item', [validators.Required(message="Item description is required.")])
-    color = TextField('Color')
-    brand = TextField('Brand')
+    item = StringField('Item', [validators.Required(message="Item description is required.")])
+    color = StringField('Color')
+    brand = StringField('Brand')
     price = DecimalField('Price', places=2)
     
     def reset(self):

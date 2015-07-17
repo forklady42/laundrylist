@@ -1,8 +1,8 @@
 from datetime import date
-from pymongo import Connection
+from pymongo import MongoClient
 from bson.objectid import ObjectId
 
-connection = Connection()
+connection = MongoClient()
 db = connection.walkin
 closet = db.closet
 
