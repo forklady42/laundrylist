@@ -17,34 +17,45 @@ def start():
 def get_icon():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'll.ico')
     
-@app.route('/closet')
-def closet():
-    return render_template('closet.html', form = Clothes(request.form))
 
-@app.route('/closet/view/<category>', methods=['GET'])
+
+@app.route('/closet/view/<category>', methods=('GET', 'POST'))
 def view_closet(category):
     ####FIX THIS: hard coded category for now
     items=db.find_category(category)
     return json.dumps(items, default=json_util.default)
 
-@app.route('/closet/view', methods=['GET', 'POST'])
+@app.route('/closet/view', methods=('GET', 'POST'))
 def view():
     return render_template('view_closet.html', form = Category(request.form))
 
-@app.route('/closet', methods=['GET', 'POST'])
+@app.route('/closet', methods=('GET', 'POST'))
 def add_item_to_closet():
     form = Clothes(request.form)
-    if request.method == 'POST' and form.validate():
-        item = {'type': form.category.data, 'item': form.item.data, 
-                'color': form.color.data, 'brand': form.brand.data, 
-                'price': float(form.price.data), 'worn': []}
+    if request.method == 'POST': #and form.validate_on_submit():
+        price = form.price.data
+        if price is not None:
+            price = float(price)
+
+        item = {
+                'type': form.category.data, 
+                'item': form.item.data, 
+                'color': form.color.data, 
+                'brand': form.brand.data, 
+                'price': price, 
+                'worn': [],
+                }
         db.add_to_closet(item)
-        print "added", item['item']
+        print "added", item['item']    # need to add logging!!
         form.reset()
         #flash(form.item.data,'added to your closet.')
     return render_template('closet.html', form=form)
+
+@app.route('/closet', methods=('GET'))
+def closet():
+    return render_template('closet.html', form = Clothes(request.form))
     
-@app.route('/<category>', methods=['GET', 'POST'])
+@app.route('/<category>', methods=('GET', 'POST'))
 def wear(category):
     print "received", category, "request"
     form = Today(request.form)
@@ -54,7 +65,7 @@ def wear(category):
         print 'worn updated for', db.find_item(form.items.data)['item']
     return render_template('index.html', form=Category(request.form))
     
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=('GET', 'POST'))
 def closet_items():
     form = Category(request.form)
     print "request received"

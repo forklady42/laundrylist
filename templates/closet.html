@@ -12,7 +12,7 @@
         <center>
         <h2>Add to closet:</h2>
         <br/>
-        <form id="form" method="POST">
+        <form id="add_item" method="POST" action="/closet">
             {{ form.csrf_token }}
             {{ form.category.label }} {{ form.category(size=1) }} </br>
             {{ form.item.label }} {{ form.item(size=20) }} </br>
