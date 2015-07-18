@@ -21,7 +21,6 @@ def get_icon():
 
 @app.route('/closet/view/<category>', methods=('GET', 'POST'))
 def view_closet(category):
-    ####FIX THIS: hard coded category for now
     items=db.find_category(category)
     return json.dumps(items, default=json_util.default)
 
