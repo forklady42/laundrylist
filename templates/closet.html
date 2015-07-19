@@ -8,24 +8,52 @@
         <link href='http://fonts.googleapis.com/css?family=Chela+One|Yanone+Kaffeesatz|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
     </head>
     <body>
-        <h1>laundry list</h1>
-        <center>
-        <h2>Add to closet:</h2>
-        <br/>
-        <form id="add_item" method="POST" action="/closet">
-            {{ form.csrf_token }}
-            {{ form.category.label }} {{ form.category(size=1) }} </br>
-            {{ form.item.label }} {{ form.item(size=20) }} </br>
-            {{ form.color.label }} {{ form.color(size=20) }} </br>
-            {{ form.brand.label }} {{ form.brand(size=20) }} </br>
-            {{ form.price.label }} {{ form.price(size=20) }} </br>
-            <input type="submit" value="Add">
-        </form>
-        <br/>
-        <br/>
-        <a href='/closet/view'>View Closet</a>
-        <a href='/'>Home</a>
-        </center>
+        <div class="center-block">
+            <h1>laundry list</h1>
+            <h2>Add to closet:</h2>
+            <form id="add_item" class="form-horizontal" method="POST" action="/closet">
+                
+                {{ form.csrf_token }}
+                <div class="form-group">
+                    {{ form.category.label(for="category", class="col-sm-2 control-label") }}
+                    <div class="col-sm-5">
+                      {{ form.category(id='category', class="form-control", size=1) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.item.label(for="item", class="col-sm-2 control-label")}} 
+                    <div class="col-sm-5">
+                        {{ form.item(id="item", class="form-control") }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.color.label(for="color", class="col-sm-2 control-label") }}
+                    <div class="col-sm-5">
+                        {{ form.color(id="color", class="form-control") }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.brand.label(for="brand", class="col-sm-2 control-label") }}
+                    <div class="col-sm-5">
+                        {{ form.brand(id="brand", class="form-control") }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!--div class="input-group"-->
+                         {{ form.price.label(for="price", class="col-sm-2 control-label") }}
+                         <div class="col-sm-5">
+                            <!--div class="input-group-addon">$</div-->
+                            {{ form.price(id="price", class="form-control") }}
+                        </div>
+                    <!--/div-->
+                </div>
+                <input type="submit" class="btn btn-primary" value="Add">
+            </div>
+            </form>
+            <br/>
+            <a href='/closet/view' class="btn btn-default">View Closet</a>
+            <a href='/' class="btn btn-default">Home</a>
+        </div>
     </body>
     <foot>
         <link rel="stylesheet" type="text/css" href="../static/bootstrap-3.3.5/css/bootstrap.min.css"/>

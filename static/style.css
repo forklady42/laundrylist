@@ -31,7 +31,7 @@ h3 {
 
 form {
 	text-align: center;
-	display: inline-block;
+	/*display: inline-block;*/
 }
 
 label {
@@ -44,6 +44,11 @@ body {
 	background-color: white;	
 }
 
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 #name {
 	border: 1px solid #7E543F;
