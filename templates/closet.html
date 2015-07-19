@@ -12,7 +12,6 @@
             <h1>laundry list</h1>
             <h2>Add to closet:</h2>
             <form id="add_item" class="form-horizontal" method="POST" action="/closet">
-                
                 {{ form.csrf_token }}
                 <div class="form-group">
                     {{ form.category.label(for="category", class="col-sm-2 control-label") }}
@@ -47,7 +46,7 @@
                         </div>
                     <!--/div-->
                 </div>
-                <input type="submit" class="btn btn-primary" value="Add">
+                <button type="submit" class="btn btn-primary">Add</button>
             </div>
             </form>
             <br/>

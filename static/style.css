@@ -40,9 +40,9 @@ label {
 	color: #49BF72;
 }
 
-body {
+/*body {
 	background-color: white;	
-}
+}*/
 
 .center-block {
   display: block;
@@ -58,12 +58,12 @@ body {
 	color: #6F83BF;
 }
 
-#submit {
+/*#submit {
 	background-color: #6F83BF;
 	padding: 5px;
 	color: white;
 	font-size: 14px;
-}
+}*/
 
 .gallery {
 	text-align: center;

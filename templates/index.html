@@ -8,17 +8,21 @@
     </head>
     <body>
         <h1>laundry list</h1>
-        <center>
         <h2>Today, I wore </h2>
         <form id="form" method="POST" action=".">
             {{ form.csrf_token }}
-            {{ form.category.label }} {{ form.category(size=1) }}
-            <input type="submit" value="Select">
+            <div class="form-group">
+                {{ form.category.label(for="category", class="col-sm-2 control-label") }}
+                <div class="col-sm-5">
+                    {{ form.category(id="category", class="form-control") }}
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Select</button>
         </form> </br>
-        <form method="GET" action="/closet">
+        <!--form method="GET" action="/closet">
             <input type="submit" value="Go to closet">
-        </form>
-        </center>
+        </form-->
+        <a href='/closet' class="btn btn-default">Go to closet</a>
     </body>
     <foot>
         <link rel="stylesheet" type="text/css" href="../static/bootstrap-3.3.5/css/bootstrap.min.css"/>
