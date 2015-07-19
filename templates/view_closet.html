@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-        <script src="../static/ll.js"></script>
+        <link rel="stylesheet" type="text/css" href="../static/bootstrap-3.3.5/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="../static/style.css"/>
         <link href='http://fonts.googleapis.com/css?family=Chela+One|Yanone+Kaffeesatz|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
     </head>
-    <body>
+    <body class="container">
         <h1>laundry list</h1>
-        <center>
         <h2>Category: </h2>
-        <form id="form" method="POST">
+        <form id="form" class="form-horizontal" method="POST">
             {{ form.csrf_token }}
-            {{ form.category.label }} {{ form.category(size=1) }}
-            <input type="submit" value="Select">
-        </form> </br>
-        <br/>
+            <div class="form-group">
+                <div class="col-sm-5">
+                    {{ form.category(id="category", class="form-control") }}
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Select</button>
+        </form>
         <div id="items">
         </div>
-        <br/>
-        <br/>
         <a href='/closet' class="btn btn-default">Edit Closet</a>
         <a href='/' class="btn btn-default">Home</a>
-        </center>
     </body>
     <foot>
-        <link rel="stylesheet" type="text/css" href="../static/bootstrap-3.3.5/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+        <script src="../static/ll.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </foot>
 </html>

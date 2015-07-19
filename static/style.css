@@ -29,34 +29,28 @@ h3 {
 	letter-spacing: -1px;
 }
 
-form {
-	text-align: center;
-	/*display: inline-block;*/
-}
-
-label {
+/*.form-horizontal .center-block {
+	display: block;
+	margin-left: auto;
+  	margin-right: auto;
+}*/
+/*label {
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 	font-size: 18px;
 	color: #49BF72;
-}
+}*/
 
 /*body {
 	background-color: white;	
 }*/
 
-.center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#name {
+/*#name {
 	border: 1px solid #7E543F;
 	padding: 5px;
 	margin: 10px;
 	font-size: 14px;
 	color: #6F83BF;
-}
+}*/
 
 /*#submit {
 	background-color: #6F83BF;
@@ -65,12 +59,17 @@ label {
 	font-size: 14px;
 }*/
 
+.btn {
+  .center-block();
+  margin: 5px auto;
+}
+
 .gallery {
 	text-align: center;
 	margin-top: 10px;
 }
 
-.link {
+/*.link {
       stroke: #ddd;
       fill: none;
 }
@@ -80,4 +79,4 @@ label {
 	font-size: 14px;
 	letter-spacing: 1px;
 	color: #49BF72;
-}
+}*/
